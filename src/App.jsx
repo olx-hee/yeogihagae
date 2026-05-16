@@ -208,13 +208,7 @@ const FALLBACK=`<div>
 <div style="font-size:18px;font-weight:700;color:#1A1A18;margin-bottom:14px">예산 검토 및 리스크</div>
 <div style="background:#FFFBEB;border-left:3px solid #D97706;padding:14px 16px;border-radius:0 10px 10px 0;margin-bottom:12px"><div style="font-size:14px;font-weight:600;color:#92400E">경쟁 현황 분석</div><div style="font-size:13px;color:#92400E;margin-top:4px">반경 500m 내 음식점 187개, 6개월내 폐업 14개, 신규 오픈 9개</div></div>
 </div>
-<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 15%,rgba(255,255,255,0.97) 45%,rgba(255,255,255,1) 100%)">
-<div style="background:#fff;border:1.5px solid #E5E7EB;border-radius:20px;padding:24px 20px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,0.1);max-width:280px;margin-top:60px">
-<div style="font-size:28px;margin-bottom:8px">🔒</div>
-<div style="font-size:16px;font-weight:700;color:#1A1A18;margin-bottom:6px">전체 보고서 확인하기</div>
-<div style="font-size:13px;color:#6B7280;line-height:1.6;margin-bottom:16px">II~V 섹션 · 후보지 3곳 비교<br/>상세 분석 · 리스크 포함</div>
-<div style="background:#4A6CF7;color:#fff;padding:12px 24px;border-radius:12px;font-size:14px;font-weight:600">보고서 전체 보기</div>
-</div></div></div>
+</div>
 <div style="text-align:center;padding:24px 0 8px;font-size:12px;color:#8E8E88;border-top:1px solid #E8E6E0;margin-top:28px">본 보고서는 AI 기반 창업 입지 분석 서비스이며, 실제 투자 결정 전 전문가 자문을 권장합니다.<br/>© 2026 여기하개 · 데이터 기준일: 2026.05</div>
 </div>`;
 
