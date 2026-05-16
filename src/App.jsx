@@ -140,8 +140,8 @@ function DonePage({onReport}){
       <div style={{display:"flex",alignItems:"center",gap:6,fontSize:13,color:T2}}><svg width="14" height="14" viewBox="0 0 24 24" fill={B}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>서울특별시 강남구 역삼1동</div>
       <h2 style={{fontSize:24,fontWeight:700,color:B,textAlign:"center",marginTop:16}}>분석이 완료되었어요!</h2>
       <p style={{fontSize:14,color:T2,textAlign:"center",marginTop:8}}>망고님을 위한 후보지를 확인해 보세요 💡</p>
-      <button onClick={onReport} style={{width:"100%",display:"flex",alignItems:"center",gap:12,padding:"16px",marginTop:20,borderRadius:14,border:"1.5px solid #E5E7EB",background:"#fff",cursor:"pointer",textAlign:"left"}}><span style={{fontSize:28}}>📋</span><div><div style={{fontSize:15,fontWeight:700,color:T1}}>상세 리포트 보기</div><div style={{fontSize:12,color:T2,marginTop:2}}>전반적인 분석과 후보지들을 구체적으로 본 후, pdf로 저장할 수 있어요</div></div></button>
-      <button style={{width:"100%",display:"flex",alignItems:"center",gap:12,padding:"16px",marginTop:10,borderRadius:14,border:"1.5px solid #E5E7EB",background:"#fff",cursor:"pointer",textAlign:"left"}}><span style={{fontSize:28}}>📍</span><div style={{fontSize:15,fontWeight:700,color:T1}}>간편하게 지도로 확인하기</div></button>
+      <button onClick={onReport} style={{width:"100%",display:"flex",alignItems:"center",gap:12,padding:"16px",marginTop:20,borderRadius:14,border:"1.5px solid #E5E7EB",background:"#fff",cursor:"pointer",textAlign:"left"}}><img src="/icon_list.png" alt="" style={{width:40,height:40,objectFit:"contain",flexShrink:0}}/><div><div style={{fontSize:15,fontWeight:700,color:T1}}>상세 리포트 보기</div><div style={{fontSize:12,color:T2,marginTop:2}}>전반적인 분석과 후보지들을 구체적으로 본 후, pdf로 저장할 수 있어요</div></div></button>
+      <button style={{width:"100%",display:"flex",alignItems:"center",gap:12,padding:"16px",marginTop:10,borderRadius:14,border:"1.5px solid #E5E7EB",background:"#fff",cursor:"pointer",textAlign:"left"}}><img src="/icon_map.png" alt="" style={{width:40,height:40,objectFit:"contain",flexShrink:0}}/><div style={{fontSize:15,fontWeight:700,color:T1}}>간편하게 지도로 확인하기</div></button>
     </div>
     <div style={{padding:"28px 24px 0"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{fontSize:17,fontWeight:700,color:T1}}>분석 기록</span><span style={{fontSize:13,color:T2,cursor:"pointer"}}>더보기 &gt;</span></div>
       <div style={{display:"flex",gap:12,marginTop:12}}>{[{area:"성동구 성수동 1가",time:"1주 전"},{area:"마포구 서교동",time:"1주 전"}].map((r,i)=>(<div key={i} style={{flex:1,padding:"16px",borderRadius:14,border:"1px solid #E5E7EB",background:"#fff"}}><span style={{fontSize:12,color:T2}}>{r.time}</span><span style={{float:"right",color:T2}}>&gt;</span><div style={{fontSize:13,color:B,fontWeight:600,marginTop:8}}>카페 입지 추천</div><div style={{fontSize:12,color:T2,marginTop:4,display:"flex",alignItems:"center",gap:4}}><svg width="10" height="10" viewBox="0 0 24 24" fill={B}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>{r.area}</div></div>))}</div>
@@ -175,12 +175,12 @@ const FALLBACK=`<div>
 </div></div>
 <div style="height:2px;background:#1A1A18;margin:24px 0"></div>
 <div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;overflow:hidden;margin-top:4px">
+<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;margin:4px -20px 0">
 <img src="/report1.png" style="width:100%;display:block"/>
-<img src="/report2.png" style="width:100%;display:block;margin-top:8px"/>
-<img src="/report3.png" style="width:100%;display:block;margin-top:8px"/>
-<img src="/report4.png" style="width:100%;display:block;margin-top:8px"/>
+<img src="/report2.png" style="width:100%;display:block;margin-top:12px"/>
+<img src="/report3.png" style="width:100%;display:block;margin-top:12px"/>
+<img src="/report4.png" style="width:100%;display:block;margin-top:12px"/>
 </div>
-<div style="text-align:center;padding:24px 0 8px;font-size:12px;color:#8E8E88;border-top:1px solid #E8E6E0;margin-top:28px">본 보고서는 AI 기반 창업 입지 분석 서비스이며, 실제 투자 결정 전 전문가 자문을 권장합니다.<br/>© 2026 여기하개 · 데이터 기준일: 2026.05</div>
 </div>`;
 
 function ReportPage({data,onBack}){
