@@ -19,7 +19,7 @@ function MainPage({onStart}){
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"16px 24px 0"}}><span style={{fontSize:24,fontWeight:800,color:B,letterSpacing:-.5}}>여기하개</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={T1} strokeWidth="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
     <div style={{padding:"28px 24px 0"}}><h1 style={{fontSize:26,fontWeight:700,lineHeight:1.4,color:T1,margin:0}}>망고님,<br/>최적의 창업 입지를<br/>찾아드릴게요 💡</h1><p style={{fontSize:14,color:T2,marginTop:12}}>상권 데이터와 원하는 조건으로 후보지를 추천해 드려요</p></div>
     <div style={{padding:"24px 24px 0"}}><button onClick={onStart} style={{width:"100%",padding:"16px 0",borderRadius:14,border:"2px solid "+B,background:"#fff",color:B,fontSize:16,fontWeight:700,cursor:"pointer"}}>분석하러 가기</button></div>
-    <div style={{flex:1,display:"flex",justifyContent:"center",alignItems:"flex-end",overflow:"hidden"}}><img src={DOG_IMG} alt="m" style={{width:280,height:"auto",objectFit:"contain",filter:"drop-shadow(0 8px 24px rgba(0,0,0,0.12))",mixBlendMode:"screen"}}/></div>
+    <div style={{flex:1,display:"flex",justifyContent:"center",alignItems:"flex-end",overflow:"hidden"}}><img src={DOG_IMG} alt="m" style={{width:280,height:"auto",objectFit:"contain",filter:"drop-shadow(0 8px 24px rgba(0,0,0,0.12))",mixBlendMode:"multiply"}}/></div>
   </div>);
 }
 
@@ -153,7 +153,7 @@ function DonePage({onReport}){
 const FALLBACK=`<div>
 <!-- COVER -->
 <div style="padding:28px 0;text-align:center;border-bottom:3px solid #1A1A18;margin-bottom:28px">
-<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px"><img src="${DOG_IMG}" style="width:44px;height:44px;object-fit:contain;border-radius:50%;mix-blend-mode:screen" alt="여기하개"/><span style="font-size:20px;font-weight:800;color:#4A6CF7;letter-spacing:-0.5px">여기하개</span></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px"><img src="${DOG_IMG}" style="width:52px;height:52px;object-fit:contain;mix-blend-mode:multiply" alt="여기하개"/><span style="font-size:20px;font-weight:800;color:#4A6CF7;letter-spacing:-0.5px">여기하개</span></div>
 <div style="font-size:11px;color:#8E8E88;letter-spacing:0.1em;margin-bottom:16px">입지 분석 보고서</div>
 <div style="border-top:3px solid #1A1A18;border-bottom:3px solid #1A1A18;padding:18px 0;margin:0 0 16px"><div style="font-size:20px;font-weight:700;color:#1A1A18;line-height:1.6">마포구 합정동 1번지<br/>소형음식점<br/>입지 분석 및 창업입지 심층보고서</div></div>
 <div style="font-size:13px;color:#8E8E88">- '여기하개' 입지 분석 보고서 -</div>
