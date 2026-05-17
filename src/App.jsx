@@ -205,7 +205,7 @@ function MapViewPage({onBack}){
   const bldg="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png";
   const peekH=300; const fullH=800;
   return(<div style={{height:"100%",position:"relative",overflow:"hidden",background:"#E8E4DA"}}>
-    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"contain",objectPosition:"center",zIndex:0}}/>
+    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:PH-peekH,objectFit:"cover",objectPosition:"center top",zIndex:0}}/>
     <div style={{position:"absolute",top:0,left:0,right:0,zIndex:30,pointerEvents:"none"}}><SBar/></div>
     <button onClick={onBack} style={{position:"absolute",top:44,left:14,width:36,height:36,borderRadius:18,background:"#fff",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)",zIndex:10}}>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
