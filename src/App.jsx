@@ -204,8 +204,8 @@ function MapViewPage({onBack}){
   const Paw=()=>(<svg width="26" height="26" viewBox="0 0 100 100" fill="#fff"><circle cx="30" cy="20" r="12"/><circle cx="55" cy="14" r="10"/><circle cx="76" cy="25" r="11"/><circle cx="18" cy="42" r="10"/><path d="M50 38 C30 38 18 52 18 65 C18 80 32 88 50 88 C68 88 82 80 82 65 C82 52 70 38 50 38Z"/></svg>);
   const bldg="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png";
   const peekH=300; const fullH=800;
-  return(<div style={{height:"100%",position:"relative",overflow:"hidden"}}>
-    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center",zIndex:0}}/>
+  return(<div style={{height:"100%",position:"relative",overflow:"hidden",background:"#E8E4DA"}}>
+    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"contain",objectPosition:"center",zIndex:0}}/>
     <div style={{position:"absolute",top:0,left:0,right:0,zIndex:30,pointerEvents:"none"}}><SBar/></div>
     <button onClick={onBack} style={{position:"absolute",top:44,left:14,width:36,height:36,borderRadius:18,background:"#fff",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)",zIndex:10}}>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -218,19 +218,12 @@ function MapViewPage({onBack}){
         <div style={{width:40,height:4,borderRadius:2,background:"#D1D5DB"}}/>
       </div>
       {!exp?(
-        <div style={{padding:"0 20px 16px"}}>
+        <div style={{padding:"0 20px 20px",cursor:"pointer"}} onClick={()=>setExp(true)}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12}}>
             <div style={{fontSize:18,fontWeight:700,color:T1,flex:1,lineHeight:1.35,paddingRight:8}}>{cur.addr}</div>
             <svg width="22" height="22" viewBox="0 0 24 24" fill={B} style={{flexShrink:0,marginTop:2}}><path d="M5 3h14a2 2 0 012 2v16l-9-4-9 4V5a2 2 0 012-2z"/></svg>
           </div>
-          <img src={bldg} style={{width:"100%",height:152,objectFit:"cover",borderRadius:14,display:"block"}}/>
-          <div style={{display:"flex",gap:8,marginTop:12}}>
-            {locs.map((l,i)=>(
-              <button key={i} onClick={()=>setSel(i)} style={{flex:1,padding:"9px 4px",borderRadius:10,border:i===sel?"2px solid "+B:"1px solid #E5E7EB",background:i===sel?"#EFF6FF":"#F9FAFB",fontSize:12,fontWeight:i===sel?700:500,color:i===sel?B:T2,cursor:"pointer"}}>
-                {i+1}위
-              </button>
-            ))}
-          </div>
+          <img src={bldg} style={{width:"100%",height:166,objectFit:"cover",borderRadius:14,display:"block"}}/>
         </div>
       ):(
         <div style={{overflowY:"auto",height:fullH-56,scrollbarWidth:"none"}}>
