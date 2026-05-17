@@ -150,40 +150,14 @@ function DonePage({onReport}){
 }
 
 /* ── REPORT (LLM + fallback) ── */
-const FALLBACK=`<div>
-<!-- COVER -->
-<div style="padding:28px 0;text-align:center;border-bottom:3px solid #1A1A18;margin-bottom:28px">
-<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px"><img src="${DOG_IMG}" style="width:52px;height:52px;object-fit:contain;mix-blend-mode:multiply" alt="여기하개"/><span style="font-size:20px;font-weight:800;color:#4A6CF7;letter-spacing:-0.5px">여기하개</span></div>
-<div style="font-size:11px;color:#8E8E88;letter-spacing:0.1em;margin-bottom:16px">입지 분석 보고서</div>
-<div style="border-top:3px solid #1A1A18;border-bottom:3px solid #1A1A18;padding:18px 0;margin:0 0 16px"><div style="font-size:20px;font-weight:700;color:#1A1A18;line-height:1.6">강남구 역삼 1동<br/>카페<br/>입지 분석 및 창업입지 심층보고서</div></div>
-<div style="font-size:13px;color:#8E8E88">- '여기하개' 입지 분석 보고서 -</div>
-<div style="margin-top:20px;font-size:13px;color:#5C5C58">작성일: 2026.05.16</div>
-</div>
-<!-- TOC -->
-<div style="margin-bottom:28px"><div style="font-size:20px;font-weight:700;color:#1A1A18;margin-bottom:16px;text-align:center">목차</div>
-<div style="font-size:13px;color:#5C5C58;line-height:2">
-<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#1A1A18;padding:8px 0;border-bottom:1px solid #E8E6E0"><span>I. 조사 개요</span><span style="color:#8E8E88;font-weight:400">3</span></div>
-<div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>사용자 입력 조건</span><span style="color:#8E8E88">3</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>조사 범위 및 지역</span><span style="color:#8E8E88">4</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>사용 데이터</span><span style="color:#8E8E88">5</span></div></div>
-<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#1A1A18;padding:8px 0;border-bottom:1px solid #E8E6E0;margin-top:8px"><span>II. 입지 분석 결과</span><span style="color:#8E8E88;font-weight:400">7</span></div>
-<div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>분석 후보지 3곳</span><span style="color:#8E8E88">7</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>후보지별 종합점수</span><span style="color:#8E8E88">8</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>분석 요약</span><span style="color:#8E8E88">8</span></div></div>
-<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#1A1A18;padding:8px 0;border-bottom:1px solid #E8E6E0;margin-top:8px"><span>III. 후보지별 상세 분석</span><span style="color:#8E8E88;font-weight:400">10</span></div>
-<div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>후보지 1~3 분석</span><span style="color:#8E8E88">10</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>강점 및 리스크 분석</span><span style="color:#8E8E88">13</span></div></div>
-<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#1A1A18;padding:8px 0;border-bottom:1px solid #E8E6E0;margin-top:8px"><span>IV. 종합 분석</span><span style="color:#8E8E88;font-weight:400">15</span></div>
-<div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>유동인구 및 상권 분석</span><span style="color:#8E8E88">15</span></div><div style="display:flex;justify-content:space-between;padding:2px 0"><span>경쟁현황 및 업종 매력도</span><span style="color:#8E8E88">17</span></div></div>
-<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#1A1A18;padding:8px 0;border-bottom:1px solid #E8E6E0;margin-top:8px"><span>V. 최종 제언 및 결론</span><span style="color:#8E8E88;font-weight:400">20</span></div>
-<div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>예산 검토 및 리스크</span><span style="color:#8E8E88">20</span></div></div>
-</div></div>
-<div style="height:2px;background:#1A1A18;margin:24px 0"></div>
-<div style="margin:4px -20px 0">
+const FALLBACK=`<div style="margin:0">
 <img src="/보고서.jpg" style="width:100%;display:block"/>
-<img src="/보고서2.jpg" style="width:100%;display:block;margin-top:8px"/>
-</div>
-<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;margin:12px -20px 0">
+<img src="/보고서2.jpg" style="width:100%;display:block"/>
+<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none">
 <img src="/report1.png" style="width:100%;display:block"/>
-<img src="/report2.png" style="width:100%;display:block;margin-top:12px"/>
-<img src="/report3.png" style="width:100%;display:block;margin-top:12px"/>
-<img src="/report4.png" style="width:100%;display:block;margin-top:12px"/>
-</div>
+<img src="/report2.png" style="width:100%;display:block"/>
+<img src="/report3.png" style="width:100%;display:block"/>
+<img src="/report4.png" style="width:100%;display:block"/>
 </div>
 </div>`;
 
@@ -213,7 +187,7 @@ function ReportPage({data,onBack}){
       <button style={{background:B,color:"#fff",border:"none",padding:"8px 14px",borderRadius:20,fontSize:12,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:4}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF로 다운 받기</button>
     </div>
     {loading?(<div style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"#fff"}}><div style={{width:48,height:48,borderRadius:24,border:"3px solid #E8F0FE",borderTopColor:B,animation:"rspin .8s linear infinite"}}/><p style={{fontSize:15,fontWeight:600,color:T1,marginTop:20}}>AI가 보고서를 작성하고 있어요{dots}</p><p style={{fontSize:13,color:T2,marginTop:6}}>잠시만 기다려 주세요</p><style>{`@keyframes rspin{to{transform:rotate(360deg)}}`}</style></div>
-    ):(<div style={{flex:1,overflow:"auto",padding:"20px",fontSize:14,lineHeight:1.7,color:"#5C5C58",fontFamily:"inherit"}} dangerouslySetInnerHTML={{__html:html}}/>)}
+    ):(<div style={{flex:1,overflow:"auto",padding:0,fontSize:14,lineHeight:1.7,color:"#5C5C58",fontFamily:"inherit"}} dangerouslySetInnerHTML={{__html:html}}/>)}
   </div>);
 }
 /* ── APP ── */
