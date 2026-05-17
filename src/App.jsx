@@ -174,12 +174,16 @@ const FALLBACK=`<div>
 <div style="padding-left:12px"><div style="display:flex;justify-content:space-between;padding:2px 0"><span>예산 검토 및 리스크</span><span style="color:#8E8E88">20</span></div></div>
 </div></div>
 <div style="height:2px;background:#1A1A18;margin:24px 0"></div>
-<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;overflow:hidden;margin-top:4px">
-<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;margin:4px -20px 0">
+<div style="margin:4px -20px 0">
+<img src="/보고서.jpg" style="width:100%;display:block"/>
+<img src="/보고서2.jpg" style="width:100%;display:block;margin-top:8px"/>
+</div>
+<div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none;margin:12px -20px 0">
 <img src="/report1.png" style="width:100%;display:block"/>
 <img src="/report2.png" style="width:100%;display:block;margin-top:12px"/>
 <img src="/report3.png" style="width:100%;display:block;margin-top:12px"/>
 <img src="/report4.png" style="width:100%;display:block;margin-top:12px"/>
+</div>
 </div>
 </div>`;
 
@@ -220,7 +224,7 @@ export default function App(){
   const[data,setData]=useState({location:"서울 강남구",bizType:"카페",deposit:"80,000,000",monthlyRent:"3,500,000",rentType:"월세",sizes:["small"],extra:""});
   const nav=(t,d="f")=>{sDir(d);sTr(true);setTimeout(()=>{sPg(t);sTr(false);},280);};
   const order=["main","loc","map","biz","budget","size","extra","loading","done","report"];
-  const labels={"main":"메인","loc":"위치 선택","map":"지도 범위","biz":"업종 선택","budget":"예산 입력","size":"입지 크기","extra":"추가사항","loading":"분석 중","done":"분석 완료","report":"리포트"};
+  const labels={"main":"메인","loc":"위치 선택","map":"지도 범위","biz":"업종 선택","budget":"예산 입력","size":"입지 크기","extra":"추가사항","loading":"분석 중","done":"분석 완료","report":"상세 리포트"};
   const ci=order.indexOf(pg);
   const goPrev=()=>{if(ci>0)nav(order[ci-1],"b");};
   const goNext=()=>{if(ci<order.length-1)nav(order[ci+1],"f");};
