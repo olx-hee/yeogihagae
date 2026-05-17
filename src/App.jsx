@@ -201,7 +201,8 @@ function MapViewPage({onBack}){
     {addr:"서울시 강남구 테헤란로 521, 1층",deposit:"2,000만",rent:"120만",area:"32.1㎡",pyeong:"9.7평",score:79,강점:"임대 조건이 우수하며 초기 자본 부담이 가장 낮습니다.",역세권:"선릉역 인근으로 평일 직장인 유동인구가 풍부합니다.",시너지:"주변 음식점 밀집으로 식후 카페 수요 연계가 기대됩니다.",리스크:"소규모 매장으로 좌석 수 제한에 따른 회전율 관리가 필요합니다."}
   ];
   const cur=locs[sel];
-  const Paw=()=>(<svg width="26" height="26" viewBox="0 0 100 100" fill="#fff"><circle cx="30" cy="20" r="12"/><circle cx="55" cy="14" r="10"/><circle cx="76" cy="25" r="11"/><circle cx="18" cy="42" r="10"/><path d="M50 38 C30 38 18 52 18 65 C18 80 32 88 50 88 C68 88 82 80 82 65 C82 52 70 38 50 38Z"/></svg>);
+  const Paw=({active})=>(<svg width={active?26:20} height={active?26:20} viewBox="0 0 100 100" fill={active?"#fff":"#4A6CF7"}><circle cx="30" cy="20" r="12"/><circle cx="55" cy="14" r="10"/><circle cx="76" cy="25" r="11"/><circle cx="18" cy="42" r="10"/><path d="M50 38 C30 38 18 52 18 65 C18 80 32 88 50 88 C68 88 82 80 82 65 C82 52 70 38 50 38Z"/></svg>);
+  const markers=[{top:"32%",left:"58%"},{top:"48%",left:"34%"},{top:"63%",left:"55%"}];
   const bldg="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png";
   const peekH=300; const fullH=800;
   return(<div style={{height:"100%",position:"relative",overflow:"hidden",background:"#E8E4DA"}}>
@@ -210,9 +211,11 @@ function MapViewPage({onBack}){
     <button onClick={onBack} style={{position:"absolute",top:44,left:14,width:36,height:36,borderRadius:18,background:"#fff",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)",zIndex:10}}>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <div style={{position:"absolute",top:"32%",left:"58%",transform:"translate(-50%,-100%)",zIndex:10}}>
-      <div style={{background:B,borderRadius:"50%",width:48,height:48,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 3px 16px rgba(74,108,247,0.45)"}}><Paw/></div>
-    </div>
+    {markers.map((m,i)=>(
+      <div key={i} style={{position:"absolute",top:m.top,left:m.left,transform:"translate(-50%,-100%)",zIndex:10,opacity:i===0?1:0.55}}>
+        <div style={{background:i===0?B:"#fff",borderRadius:"50%",width:i===0?48:36,height:i===0?48:36,display:"flex",alignItems:"center",justifyContent:"center",border:i===0?"none":"1.5px solid #C7D2FE",boxShadow:i===0?"0 3px 16px rgba(74,108,247,0.45)":"0 1px 6px rgba(0,0,0,0.12)"}}><Paw active={i===0}/></div>
+      </div>
+    ))}
     <div style={{position:"absolute",bottom:0,left:0,right:0,background:"#fff",borderRadius:"20px 20px 0 0",boxShadow:"0 -4px 24px rgba(0,0,0,0.12)",height:exp?fullH:peekH,transition:"height 0.35s cubic-bezier(0.4,0,0.2,1)",zIndex:20,overflow:"hidden"}}>
       <div onClick={()=>setExp(e=>!e)} style={{display:"flex",justifyContent:"center",padding:"12px 0 6px",cursor:"pointer"}}>
         <div style={{width:40,height:4,borderRadius:2,background:"#D1D5DB"}}/>
