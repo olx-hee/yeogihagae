@@ -150,7 +150,7 @@ function DonePage({onReport}){
 }
 
 /* ── REPORT (LLM + fallback) ── */
-const FALLBACK=`<div style="margin:0">
+const FALLBACK=`<style>::-webkit-scrollbar{display:none}</style><div style="margin:0;width:100%">
 <img src="/보고서.jpg" style="width:100%;display:block"/>
 <img src="/보고서2.jpg" style="width:100%;display:block"/>
 <div style="filter:blur(6px);-webkit-filter:blur(6px);user-select:none;pointer-events:none">
@@ -187,7 +187,7 @@ function ReportPage({data,onBack}){
       <button style={{background:B,color:"#fff",border:"none",padding:"8px 14px",borderRadius:20,fontSize:12,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:4}}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF로 다운 받기</button>
     </div>
     {loading?(<div style={{flex:1,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",background:"#fff"}}><div style={{width:48,height:48,borderRadius:24,border:"3px solid #E8F0FE",borderTopColor:B,animation:"rspin .8s linear infinite"}}/><p style={{fontSize:15,fontWeight:600,color:T1,marginTop:20}}>AI가 보고서를 작성하고 있어요{dots}</p><p style={{fontSize:13,color:T2,marginTop:6}}>잠시만 기다려 주세요</p><style>{`@keyframes rspin{to{transform:rotate(360deg)}}`}</style></div>
-    ):(<div style={{flex:1,overflow:"auto",padding:0,fontSize:14,lineHeight:1.7,color:"#5C5C58",fontFamily:"inherit"}} dangerouslySetInnerHTML={{__html:html}}/>)}
+    ):(<div style={{flex:1,overflow:"auto",padding:0,scrollbarWidth:"none",msOverflowStyle:"none",fontSize:14,lineHeight:1.7,color:"#5C5C58",fontFamily:"inherit"}} dangerouslySetInnerHTML={{__html:html}}/>)}
   </div>);
 }
 /* ── APP ── */
