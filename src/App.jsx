@@ -140,8 +140,8 @@ function DonePage({onReport,onMap}){
       <div style={{display:"flex",alignItems:"center",gap:6,fontSize:13,color:T2}}><svg width="14" height="14" viewBox="0 0 24 24" fill={B}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>서울특별시 강남구 역삼1동</div>
       <h2 style={{fontSize:24,fontWeight:700,color:B,textAlign:"center",marginTop:16}}>분석이 완료되었어요!</h2>
       <p style={{fontSize:14,color:T2,textAlign:"center",marginTop:8}}>최적의 입지로 선정된 3곳을 확인해 보세요 ✨</p>
-      <button onClick={onReport} style={{width:"100%",display:"flex",alignItems:"center",gap:14,padding:"16px 18px",marginTop:20,borderRadius:16,border:"1.5px solid #BFDBFE",background:"linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%)",cursor:"pointer",textAlign:"left"}}><img src="/list.png" alt="" style={{width:52,height:52,objectFit:"contain",flexShrink:0}}/><div><div style={{fontSize:15,fontWeight:700,color:T1}}>상세 리포트 보기</div><div style={{fontSize:12,color:T2,marginTop:3}}>추천 입지 3곳의 선정이유와 상권 분석결과를 pdf로 확인할 수 있어요</div></div></button>
-      <button onClick={onMap} style={{width:"100%",display:"flex",alignItems:"center",gap:14,padding:"16px 18px",marginTop:10,borderRadius:16,border:"1.5px solid #BFDBFE",background:"linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%)",cursor:"pointer",textAlign:"left"}}><img src="/map.png" alt="" style={{width:52,height:52,objectFit:"contain",flexShrink:0}}/><div style={{fontSize:15,fontWeight:700,color:T1}}>간편하게 지도로 확인하기</div></button>
+      <button onClick={onReport} style={{width:"100%",display:"flex",flexDirection:"column",alignItems:"center",gap:12,padding:"30px 20px 26px",marginTop:20,borderRadius:20,border:"1.5px solid #BFDBFE",background:"linear-gradient(to top,#DBEAFE 0%,#EFF6FF 55%,#fff 100%)",cursor:"pointer"}}><img src="/list.png" alt="" style={{width:72,height:72,objectFit:"contain"}}/><div style={{textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:T1}}>상세 리포트 보기</div><div style={{fontSize:12,color:T2,marginTop:5}}>추천 입지 3곳의 선정이유와 상권 분석결과를 pdf로 확인할 수 있어요</div></div></button>
+      <button onClick={onMap} style={{width:"100%",display:"flex",flexDirection:"column",alignItems:"center",gap:12,padding:"30px 20px 26px",marginTop:12,borderRadius:20,border:"1.5px solid #BFDBFE",background:"linear-gradient(to top,#DBEAFE 0%,#EFF6FF 55%,#fff 100%)",cursor:"pointer"}}><img src="/map.png" alt="" style={{width:72,height:72,objectFit:"contain"}}/><div style={{fontSize:16,fontWeight:700,color:T1}}>간편하게 지도로 확인하기</div></button>
     </div>
     <div style={{padding:"28px 24px 0"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}><span style={{fontSize:17,fontWeight:700,color:T1}}>분석 기록</span><span style={{fontSize:13,color:T2,cursor:"pointer"}}>더보기 &gt;</span></div>
       <div style={{display:"flex",gap:12,marginTop:12}}>{[{area:"성동구 성수동 1가",time:"1주 전"},{area:"마포구 서교동",time:"1주 전"}].map((r,i)=>(<div key={i} style={{flex:1,padding:"16px",borderRadius:14,border:"1px solid #E5E7EB",background:"#fff"}}><span style={{fontSize:12,color:T2}}>{r.time}</span><span style={{float:"right",color:T2}}>&gt;</span><div style={{fontSize:13,color:B,fontWeight:600,marginTop:8}}>카페 입지 추천</div><div style={{fontSize:12,color:T2,marginTop:4,display:"flex",alignItems:"center",gap:4}}><svg width="10" height="10" viewBox="0 0 24 24" fill={B}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>{r.area}</div></div>))}</div>
@@ -204,53 +204,43 @@ function MapViewPage({onBack}){
   const markers=[{top:"30%",left:"60%"},{top:"46%",left:"33%"},{top:"62%",left:"54%"}];
   const Paw=({active})=>(<svg width="26" height="26" viewBox="0 0 100 100" fill={active?"#fff":"#4A6CF7"}><circle cx="30" cy="20" r="12"/><circle cx="55" cy="14" r="10"/><circle cx="76" cy="25" r="11"/><circle cx="18" cy="42" r="10"/><path d="M50 38 C30 38 18 52 18 65 C18 80 32 88 50 88 C68 88 82 80 82 65 C82 52 70 38 50 38Z"/></svg>);
   const peekH=200; const fullH=540;
-  return(<div style={{height:"100%",position:"relative",overflow:"hidden"}}>
+  return(<div style={{height:"100%",position:"relative",overflow:"hidden",background:"#DCE4EC"}}>
     <SBar/>
-    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"cover",objectPosition:"center"}}/>
+    <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%A7%80%EB%8F%84.png" style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",objectFit:"contain",objectPosition:"center"}}/>
     <button onClick={onBack} style={{position:"absolute",top:44,left:14,width:36,height:36,borderRadius:18,background:"#fff",border:"none",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 2px 8px rgba(0,0,0,0.15)",zIndex:10}}>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" strokeWidth="2.5" strokeLinecap="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    {markers.map((m,i)=>(
-      <div key={i} onClick={()=>{setSel(i);setExp(false);}} style={{position:"absolute",top:m.top,left:m.left,transform:"translate(-50%,-100%)",cursor:"pointer",zIndex:10,display:"flex",flexDirection:"column",alignItems:"center",gap:2}}>
-        <div style={{background:i===sel?B:"#fff",borderRadius:"50%",width:44,height:44,display:"flex",alignItems:"center",justifyContent:"center",border:i===sel?"none":"2px solid #E5E7EB",boxShadow:"0 2px 12px rgba(0,0,0,0.2)"}}><Paw active={i===sel}/></div>
-        <div style={{background:i===sel?B:"#fff",color:i===sel?"#fff":B,fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 8px",boxShadow:"0 1px 4px rgba(0,0,0,0.15)"}}>{i+1}위 {locs[i].score}점</div>
-      </div>
-    ))}
+    <div style={{position:"absolute",top:markers[0].top,left:markers[0].left,transform:"translate(-50%,-100%)",zIndex:10}}>
+      <div style={{background:B,borderRadius:"50%",width:48,height:48,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 3px 16px rgba(74,108,247,0.45)"}}><Paw active={true}/></div>
+    </div>
     <div style={{position:"absolute",bottom:0,left:0,right:0,background:"#fff",borderRadius:"20px 20px 0 0",boxShadow:"0 -4px 24px rgba(0,0,0,0.12)",transition:"height 0.35s cubic-bezier(0.4,0,0.2,1)",height:exp?fullH:peekH,zIndex:20,overflow:"hidden"}}>
       <div style={{display:"flex",justifyContent:"center",paddingTop:10,paddingBottom:4,cursor:"pointer"}} onClick={()=>setExp(!exp)}>
         <div style={{width:36,height:4,borderRadius:2,background:"#D1D5DB"}}/>
       </div>
       {!exp?(
-        <div style={{padding:"4px 16px 16px",cursor:"pointer"}} onClick={()=>setExp(true)}>
-          <div style={{display:"flex",gap:12,alignItems:"flex-start"}}>
-            <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png" style={{width:88,height:64,objectFit:"cover",borderRadius:10,flexShrink:0}}/>
+        <div style={{padding:"4px 16px 20px",cursor:"pointer"}} onClick={()=>setExp(true)}>
+          <div style={{display:"flex",gap:14,alignItems:"flex-start"}}>
+            <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png" style={{width:110,height:82,objectFit:"cover",borderRadius:12,flexShrink:0}}/>
             <div style={{flex:1,minWidth:0}}>
-              <div style={{fontSize:14,fontWeight:700,color:T1,lineHeight:1.3}}>{cur.addr}</div>
-              <div style={{display:"flex",gap:10,marginTop:8}}>
-                {[["보증금/월세",`${cur.deposit}/${cur.rent}`],["전용면적",`${cur.area}`],["총점",`${cur.score}/100`]].map(([k,v],i)=>(
-                  <div key={i} style={{textAlign:"center"}}><div style={{fontSize:9,color:T2}}>{k}</div><div style={{fontSize:11,fontWeight:700,color:i===2?B:T1}}>{v}</div></div>
+              <div style={{fontSize:14,fontWeight:700,color:T1,lineHeight:1.35}}>{cur.addr}</div>
+              <div style={{display:"flex",gap:16,marginTop:10}}>
+                {[["보증금/월세",`${cur.deposit}/${cur.rent}`],["전용면적",`${cur.area}`]].map(([k,v],i)=>(
+                  <div key={i}><div style={{fontSize:9,color:T2}}>{k}</div><div style={{fontSize:12,fontWeight:700,color:T1,marginTop:2}}>{v}</div></div>
                 ))}
               </div>
             </div>
           </div>
-          <div style={{display:"flex",gap:6,marginTop:12}}>
-            {locs.map((l,i)=>(
-              <button key={i} onClick={(e)=>{e.stopPropagation();setSel(i);setExp(false);}} style={{flex:1,padding:"8px 4px",borderRadius:10,border:i===sel?"2px solid "+B:"1px solid #E5E7EB",background:i===sel?"#EFF6FF":"#fff",fontSize:11,fontWeight:i===sel?700:400,color:i===sel?B:T2,cursor:"pointer",lineHeight:1.4}}>
-                {i+1}위<br/><span style={{fontSize:10}}>{l.score}점</span>
-              </button>
-            ))}
-          </div>
         </div>
       ):(
         <div style={{overflowY:"auto",height:fullH-56,scrollbarWidth:"none"}}>
-          <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png" style={{width:"100%",height:180,objectFit:"cover",display:"block"}}/>
+          <img src="/%EC%A7%80%EB%8F%84%20UI%20-%20%EC%B0%B8%EA%B3%A0%20%EC%9D%B4%EB%AF%B8%EC%A7%80.png" style={{width:"100%",height:260,objectFit:"cover",display:"block"}}/>
           <div style={{padding:"16px 20px 32px"}}>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:14}}>
               <div style={{fontSize:16,fontWeight:700,color:T1,flex:1,lineHeight:1.3}}>{cur.addr}</div>
               <svg width="22" height="22" viewBox="0 0 24 24" fill={B} style={{flexShrink:0,marginLeft:8}}><path d="M5 3h14a2 2 0 012 2v16l-9-4-9 4V5a2 2 0 012-2z"/></svg>
             </div>
             <div style={{display:"flex",borderRadius:12,overflow:"hidden",background:"#F8F9FA",marginBottom:16}}>
-              {[["보증금/월세",`${cur.deposit}\n${cur.rent}`,false],["전용면적",`${cur.area}\n${cur.pyeong}`,false],["총점",`${cur.score}/100`,true]].map(([k,v,blue],i)=>(
+              {[["보증금/월세",`${cur.deposit}\n${cur.rent}`,false],["전용면적",`${cur.area}\n${cur.pyeong}`,false]].map(([k,v,blue],i)=>(
                 <div key={i} style={{flex:1,padding:"12px 6px",textAlign:"center",borderRight:i<2?"1px solid #E5E7EB":"none"}}>
                   <div style={{fontSize:9,color:T2,marginBottom:4}}>{k}</div>
                   <div style={{fontSize:12,fontWeight:700,color:blue?B:T1,whiteSpace:"pre-line",lineHeight:1.4}}>{v}</div>
